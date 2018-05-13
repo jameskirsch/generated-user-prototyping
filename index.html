@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Random User Data</title>
+    <title>User Registration Analytics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -36,51 +36,40 @@
         <div class="container centerText">
             <header class="row">
                 <section class="col-xl-12">
-                    <h1>User Analytics</h1>
+                    <h1>Registered User Analytics</h1>
                 </section>
             </header>
         </div>
         <br>
         <div class="container">
-            <div class="row" style="text-align: center;">
-                <section class="col-xl-4">
-                    <h3>Understanding</h3>
-                    <br>
-                    <p>Why the user engages a feature?</p>
-                    <p>Where will</p>
-                </section>
-                <section class="col-xl-4">
-                    Behavioral Patterns
-                </section>
-                <section class="col-xl-4">
-                    Actions and Expectations
-                </section>
-            </div>
             <br>
             <div>
                 <div class="row">
-                    <section class="col-xl-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quidem necessitatibus illo porro, temporibus culpa id perspiciatis eius possimus dolorum sit, at blanditiis ipsa nisi autem aliquam commodi ipsum sequi.
-                        Consectetur assumenda perspiciatis ipsa quis? Inventore suscipit reprehenderit nisi molestiae, fugiat tenetur sunt natus hic repellendus incidunt soluta aut error. Vel, aliquid. Aut sapiente repellendus enim ut eaque voluptates eligendi.
-                        Commodi asperiores neque, quidem incidunt magnam, ducimus accusamus rerum recusandae illum natus facilis assumenda eaque aliquid eveniet deserunt aperiam molestias suscipit quas veniam delectus deleniti similique? Reprehenderit saepe autem quia?
+                    <section class="col-xl-3">
+                        <p>Evaluation of existing user trends, based on registration year, and gender. 
+                            Will pull random data from <a href="https://randomuser.me" target="_blank">randomuser.me</a></p>
+                        <p></p>
+                        <p>This is not real data, just a demonstration, and will be a random set of users each time.</p>
+                        <p>See <a href="about.html">About</a> section for further details.</p>
                     </section>
-                    <section class="col-xl-6">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus officia perferendis ab maxime quis rem culpa aliquam nostrum, eius minus eveniet vero exercitationem? Quos vitae aperiam nihil incidunt dolorum aspernatur.
-                        A cumque sequi alias? Odit, quam nobis. Hic tenetur asperiores vitae possimus, cum, amet nemo eaque dignissimos velit, aspernatur cumque iste? Expedita cumque fuga nam distinctio magni doloribus laboriosam vel!
-                        Error maxime, porro sed, laudantium aspernatur repellendus vel magni voluptatem incidunt eum libero deserunt laborum beatae labore excepturi unde aliquam doloribus cupiditate dicta numquam ipsa minus ea. Nostrum, autem commodi.
+                    <section class="col-xl-5">
+                        <div class="container">
+                            <canvas id="bar-chart" width="500" height="350"></canvas>
+                        </div>
+                    </section>
+                    <section class="col-xl-4">
+                        <div class="container">
+                            <canvas id="pie-chart" width="800" height="650"></canvas>
+                        </div>
                     </section>
                 </div>
             </div>
         </div>
         <br>
         <div class="container">
-            <canvas id="bar-chart" width="800" height="350"></canvas>
-        </div>
-        <br>
-        <div class="container">
             <div class="table-responsive">
                 <table id="users" class="hover table-compact row-border stripe" style="font-size: .9em;">
-                    <thead>
+                    <thead style="background-color: rgb(221, 221, 221);">
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>

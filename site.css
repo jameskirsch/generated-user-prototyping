@@ -1,14 +1,16 @@
-
- body {
+body {
     padding-top: 54px;
-  }
-  @media (min-width: 992px) {
+}
+@media (min-width: 992px) {
     body {
-      padding-top: 56px;
+        padding-top: 56px;
     }
-  }
+}
 
-  .centerText {
-      text-align: center;
-  }
-  
+.centerText {
+    text-align: center;
+}
+
+.dataTables_wrapper {
+    background-color:whitesmoke;
+}
