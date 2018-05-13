@@ -3,33 +3,57 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>James Kirsch</title>
+    <title>Random User Data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="site.css" />
 </head>
 <body>
-    <div>
+    <br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
+            <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container centerText">
             <header class="row">
                 <section class="col-xl-12">
-                    <h1>Placeholder (Header)</h1>
+                    <h1>User Analytics</h1>
                 </section>
             </header>
         </div>
         <br>
         <div class="container">
-            <div class="row">
+            <div class="row" style="text-align: center;">
                 <section class="col-xl-4">
-                    udantium. Accusamus, non quisquam, ducimus exercitationem accusantium eveniet consequatur doloribus temporibus corrupti saepe provident, nesciunt autem tempore laudantium architecto labore? Ex rerum similique reiciendis magni dolore velit expedita.
+                    <h3>Understanding</h3>
+                    <br>
+                    <p>Why the user engages a feature?</p>
+                    <p>Where will</p>
                 </section>
                 <section class="col-xl-4">
-                    voluptatem vitae non perferendis quod soluta minima esse fugit sequi a, reiciendis delectus. Sint quibusdam assumenda aperiam explicabo exercitationem accusantium iure voluptate, eius ratione vel rem fugit.
-                    Recusandae quia molestias facilis accusantium perferendis unde, voluptas reprehenderit tenetur at ullam sunt vero error iusto perspiciatis iste architecto consequatur distinctio eaque aliquid quis similique! Nam repellendus numquam illum aspernatur?
+                    Behavioral Patterns
                 </section>
                 <section class="col-xl-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, totam quidem voluptas reiciendis impedit sapiente eligendi dolore id omnis ipsum neque sint sed culpa odit repellat veritatis alias qui quaerat!Saepe assumenda ad delectus corporis reiciendis blanditiis similique ratione incidunt maxime! Aliquid soluta qui explicabo illum vitae enim quo provident voluptatum. Ea, voluptatibus eligendi iste mollitia non labore repudiandae culpa?
+                    Actions and Expectations
                 </section>
             </div>
             <br>
@@ -50,28 +74,36 @@
         </div>
         <br>
         <div class="container">
-            <br>
-            <table id="users" class="table cell-border table-hover" item-width="100%">
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-            </table>
+            <canvas id="bar-chart" width="800" height="350"></canvas>
         </div>
         <br>
-        <footer class="container">
-            <h1>Place holder (footer)</h1>
+        <div class="container">
+            <div class="table-responsive">
+                <table id="users" class="hover table-compact row-border stripe" style="font-size: .9em;">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Email</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <br>
+        <footer class="page-footer font-small pt-4 mt-4 bg-dark navbar-dark" style="color:whitesmoke">
+            <div class="footer-copyright py-3 text-center">
+                <p>&copy; 2018 James Kirsch Jr</p>
+            </div>
         </footer>
     </div>
-
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
     <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
     <script src="main.js"></script>
 </body>
