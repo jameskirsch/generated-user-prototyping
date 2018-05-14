@@ -1,6 +1,6 @@
 'use strict';
 
-function BuildDataAnalytics(users) {
+function BuildUserAnalytics(users) {
     var registeredBeforeOrIn2008 = 0;
     var registeredAfter2008 = 0;
     var registeredIn2010 = 0;

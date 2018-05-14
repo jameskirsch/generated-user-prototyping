@@ -1,32 +1,34 @@
 'use strict';
 
 $(document).ready(function () {
-    var totalUsers = 10;
+    var totalUsers = 12;
 
     function GetUsers() {
         var users = [];
-        // Needed because a Seed Id needs to be associated to each user in the API, in order to retrieve that same user again
-        // Instead of associating the Seed Id with the entire collection. Eventually to be made Async
+        var deferred = [];
+        // Seed Id needs to be associated to each user in the API, in order to retrieve that same user again
+        // instead of associating the Seed Id with the entire collection.
         for (var i = 0; i < totalUsers; i++) {
-            $.ajax({
+            deferred.push($.ajax({
                 dataType: "json",
                 url: 'https://randomuser.me/api/?results=1',
                 method: 'GET',
-                async: false, // An improvement can be made here to make this non blocking for performance
+                async: true,
                 success: function(data) {
                     var registered = new Date(data.results[0].registered);
                     var yearRegistered = registered.getFullYear();
+                    var dataResult = data.results[0];
 
                     var user = {
                         seedId: data.info.seed,
-                        firstName:  '<a href="' + 'details.html?id=' + data.info.seed + '">' + data.results[0].name.first + '</a>',
-                        lastName: data.results[0].name.last,
-                        email: data.results[0].email,
-                        city: data.results[0].location.city,
-                        state: data.results[0].location.state,
-                        zip: data.results[0].location.postcode,
+                        firstName:  '<a href="' + 'details.html?id=' + data.info.seed + '">' + dataResult.name.first + '</a>',
+                        lastName: dataResult.name.last,
+                        email: dataResult.email,
+                        city: dataResult.location.city,
+                        state: dataResult.location.state,
+                        zip: dataResult.location.postcode,
                         registered : yearRegistered,
-                        gender: data.results[0].gender
+                        gender: dataResult.gender
                     };
                     users.push(user);
                 },
@@ -34,12 +36,17 @@ $(document).ready(function () {
                     console.log('An error occurred: ' + error.responseText);
                     console.log('Status: ' + error.statusText + ' Status Code: ' + error.statusCode);
                 }
-            });
+            }));
         };
-        return users;
+
+        $.when.apply($, deferred).then(function() {
+            BuildUserTable(users);
+            BuildUserAnalytics(users);
+        }).done(function() {
+            console.log('Finished Processing Users');
+        });
     };
 
-    var users = GetUsers();
-    BuildUserTable(users);
-    BuildDataAnalytics(users);
+    GetUsers();
 });
+

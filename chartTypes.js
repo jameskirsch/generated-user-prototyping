@@ -1,12 +1,7 @@
 'use strict';
 
-function CreatePieChart(
-    elementId,
-    dataValues,
-    dataLabels,
-    title
-) {
-    var myPieChart = new Chart($('#' + elementId),{
+function CreatePieChart(Id, dataValues, dataLabels, title) {
+    new Chart($('#' + Id), {
         type: 'pie',
         data: {
             datasets: [{
@@ -24,21 +19,15 @@ function CreatePieChart(
     });
 }
 
-function CreateBarChart(
-    elementId,
-    xLabelTitle,
-    xLabelSet,
-    yValueSet,
-    chartTitle
-) {
-    new Chart($('#' + elementId), {
+function CreateBarChart(Id, xLabelTitle, xLabelSet, yValueSet, chartTitle) {
+    new Chart($('#' + Id), {
         type: 'bar',
         data: {
             labels: xLabelSet,
             datasets: [{
                 label: xLabelTitle,
                 data: yValueSet,
-                backgroundColor: ["#00A591", "#EC9787","#6F9FD8"]
+                backgroundColor: ["#00A591", "#EC9787", "#6F9FD8"]
             }]
         },
         options: {
@@ -61,4 +50,4 @@ function CreateBarChart(
             }
         }
     });
-};
+}
