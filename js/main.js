@@ -14,7 +14,7 @@ $(document).ready(function () {
                 dataType: "json",
                 url: 'https://randomuser.me/api/?results=1',
                 method: 'GET',
-                async: true,
+                async: false, // Cross-Origin Request Blocked in Edge and Firefox, will re-enable async when those issues are fixed
                 success: function(data) {
                     var registered = new Date(data.results[0].registered);
                     var yearRegistered = registered.getFullYear();
