@@ -6,11 +6,19 @@ body {
         padding-top: 56px;
     }
 }
-
-.centerText {
-    text-align: center;
-}
-
 .dataTables_wrapper {
     background-color:whitesmoke;
+}
+.large-name {
+    font-size: 1em;
+}
+.small-name {
+    font-size: .8em;
+}
+.label-design-small {
+    font-size: .9em;
+    padding-right: .5em;
+}
+.add-border-left {
+    border-left: whitesmoke solid;
 }

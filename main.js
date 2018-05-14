@@ -6,6 +6,7 @@ $(document).ready(function () {
     function GetUsers() {
         var users = [];
         var deferred = [];
+
         // Seed Id needs to be associated to each user in the API, in order to retrieve that same user again
         // instead of associating the Seed Id with the entire collection.
         for (var i = 0; i < totalUsers; i++) {
