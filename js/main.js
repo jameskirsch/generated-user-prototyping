@@ -16,7 +16,7 @@ $(document).ready(function () {
                 method: 'GET',
                 async: false, // Cross-Origin Request Blocked in Edge and Firefox, will re-enable async when those issues are fixed
                 success: function(data) {
-                    var registered = new Date(data.results[0].registered);
+                    var registered = new Date(data.results[0].registered.date);
                     var yearRegistered = registered.getFullYear();
                     var dataResult = data.results[0];
 
